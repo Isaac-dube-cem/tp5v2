@@ -30,13 +30,13 @@ namespace BaladeurMultiFormats.Tests
         // TODO Test A : ConsultationTestPourUneConsulationParam2NullTest
         // Compléter la méthode pour tester le constructeur au cas où la chanson passée en 
         // deuxième paramètre est à null
-
+        [ExpectedException(typeof(ArgumentNullException))]
         public void ConsultationTestPourUneConsulationParam2NullTest()
         {
 
             // Arrange/Act : Instancier un objet Consultation avec la date actuelle et une chanson à null
             // À compléter...
-            
+            Consultation consultation = new Consultation(DateTime.Now, null);
            
             // Assert : Vérifier si le constructeur lève une exception ArgumentNullException
             // À compléter...
@@ -52,7 +52,7 @@ namespace BaladeurMultiFormats.Tests
             // Instancier un objet DateTime pour la date actuelle
             // Instancier un objet consultation en utilisant les deux objets que vous venez de créer
             // À compléter...
-
+            
             // Act : Récupérer la date de consultation de la chanson en utilisant la propriété Date 
             // À compléter...
 
