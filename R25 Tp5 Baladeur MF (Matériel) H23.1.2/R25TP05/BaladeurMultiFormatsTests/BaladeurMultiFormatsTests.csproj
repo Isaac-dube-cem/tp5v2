@@ -49,7 +49,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IChanson .cs" />
     <Compile Include="UnitTestConsultationTODOs.cs" />
     <Compile Include="UnitTestHistoriqueTODOs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
