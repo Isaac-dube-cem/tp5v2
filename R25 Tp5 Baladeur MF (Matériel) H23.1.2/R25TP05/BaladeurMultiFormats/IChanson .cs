@@ -18,11 +18,13 @@ namespace BaladeurMultiFormatsTests
 
         void Ecrire(string pParoles);
 
-        void EcrireEntete(StreamReader pobjFichier);
+        void EcrireEntete(StreamWriter pobjFichier);
 
-        void EcrireParoles(StreamReader pobjFichier, string pParoles);
+        void EcrireParoles(StreamWriter pobjFichier, string pParoles);
 
         void LireEntete();
+
+        string LireParoles(StreamReader pobjFichier);
 
         void SauterEntete(StreamReader pobjFichier);
     }

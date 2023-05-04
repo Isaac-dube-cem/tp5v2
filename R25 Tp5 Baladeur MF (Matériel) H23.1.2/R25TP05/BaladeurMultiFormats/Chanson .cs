@@ -24,7 +24,7 @@ namespace BaladeurMultiFormatsTests
 
         public string Artiste { get; }
 
-        public string Format { get; }
+        public abstract string Format { get; }
 
         public string NomFichier { get; }
 
@@ -47,23 +47,20 @@ namespace BaladeurMultiFormatsTests
 
         public void Ecrire(string pParoles)
         {
-            
+            StreamWriter Fichier = new StreamWriter(NomFichier);
+
+            EcrireEntete(Fichier);
+            Fichier.WriteLine(pParoles);
+            Fichier.Close();
         }
 
-        public void EcrireEntete(StreamReader pobjFichier)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void EcrireEntete(StreamWriter pobjFichier);
 
-        public void EcrireParoles(StreamReader pobjFichier, string pParoles)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void EcrireParoles(StreamWriter pobjFichier, string pParoles);
 
-        public void LireEntete()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void LireEntete();
+
+        public abstract string LireParoles(StreamReader pobjFichier);
 
         public void SauterEntete(StreamReader pobjFichier)
         {
