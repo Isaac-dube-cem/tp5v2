@@ -7,30 +7,30 @@ using System.Threading.Tasks;
 
 namespace BaladeurMultiFormats
 {
-    public class ChansonAAC : Chanson
+    public class ChansonMP3 : Chanson
     {
         #region Champs
         public override string Format { get; }
         #endregion
 
         #region Méthodes
-        public ChansonAAC(string pNomFichier) : base(pNomFichier)
+        public ChansonMP3(string pNomFichier) : base(pNomFichier)
         {
-            
-        }
-        public ChansonAAC(string pRépertoire, string pArtiste, string pTitre, int pAnnée) : base(pRépertoire, pArtiste, pTitre, pAnnée)
-        {
-            
 
         }
+        public ChansonMP3(string pRepertoire, string pArtiste, string pTitre, int pAnnée) : base(pRepertoire, pArtiste, pTitre, pAnnée)
+        {
+
+        }
+
         public override void EcrireEntete(StreamWriter pobjFichier)
         {
-            pobjFichier.WriteLine("TITRE = " + Titre + " : " + "ARTISTE = " + Artiste + " : " + "ANNÉE = " + Annee);
+            pobjFichier.WriteLine(Artiste + " | " + Annee + " | " + Titre);
         }
 
         public override void EcrireParoles(StreamWriter pobjFichier, string pParoles)
         {
-            OutilsFormats.EncoderAAC(pParoles);
+            OutilsFormats.EncoderMP3(pParoles);
             pobjFichier.WriteLine(pParoles);
         }
 
@@ -38,15 +38,11 @@ namespace BaladeurMultiFormats
         {
             StreamReader fichier = new StreamReader(m_nomFichier);
             string infos = fichier.ReadLine();
+            string[] barre = infos.Split('|');
             
-            string [] points = infos.Split(':');
-            string [] titre = points[0].Split('=');
-            string [] artiste = points[1].Split('=');
-            string[] annee = points[2].Split('=');
-
-            m_titre = titre[1].Trim();
-            m_artiste = artiste[1].Trim();
-            m_annee = int.Parse(annee[1].Trim());
+            m_artiste = barre[0].Trim();
+            m_annee = int.Parse(barre[1].Trim());
+            m_titre = barre[2].Trim();
 
             fichier.Close();
         }
@@ -55,7 +51,7 @@ namespace BaladeurMultiFormats
         {
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
-            OutilsFormats.DecoderAAC(infos);
+            OutilsFormats.DecoderMP3(infos);
             return pobjFichier.ToString();
         }
         #endregion

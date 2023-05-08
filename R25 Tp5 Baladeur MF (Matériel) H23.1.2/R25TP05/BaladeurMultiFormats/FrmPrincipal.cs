@@ -24,6 +24,7 @@ namespace BaladeurMultiFormats
             MonHistorique = new Historique();
             // À COMPLÉTER...
             ChansonAAC chansonAAC = new ChansonAAC("Chansons\\Blame It On Me.aac");
+            ChansonMP3 chansonMP3 = new ChansonMP3("Chansons\\Billie Jean.mp3");
         }
         #endregion
         //---------------------------------------------------------------------------------
