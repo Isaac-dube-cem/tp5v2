@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,13 +20,13 @@ namespace BaladeurMultiFormats
         #endregion
 
         #region Méthodes
-        public Baladeur()
-        {
-            m_colChansons = new List<Chanson>();    
-        }
         public void AfficherLesChansons(ListView pListView)
         {
             throw new NotImplementedException();
+        }
+        public Baladeur()
+        {
+            m_colChansons = new List<Chanson>();
         }
 
         public Chanson ChansonAt(int pIndex)
@@ -35,7 +36,30 @@ namespace BaladeurMultiFormats
 
         public void ConstruireLaListeDesChansons()
         {
-            throw new NotImplementedException();
+            string[] filelist = Directory.GetFiles(NOM_RÉPERTOIRE);
+            if (Directory.Exists(NOM_RÉPERTOIRE))
+            {
+                foreach (var file in filelist)
+                {
+                    string[] infos = file.Split('.');
+
+                    if (infos[1] == "aac")
+                    {
+                        ChansonAAC chansonAAC = new ChansonAAC(file);
+                        m_colChansons.Add(chansonAAC);
+                    }
+                    else if(infos[1] == "mp3")
+                    {
+                        ChansonMP3 chansonMP3 = new ChansonMP3(file);
+                        m_colChansons.Add(chansonMP3);
+                    }
+                    else
+                    {
+                        ChansonWMA chansonWMA = new ChansonWMA(file);
+                        m_colChansons.Add(chansonWMA);
+                    }
+                }
+            }
         }
 
         public void ConvertirVersAAC(int pIndex)
