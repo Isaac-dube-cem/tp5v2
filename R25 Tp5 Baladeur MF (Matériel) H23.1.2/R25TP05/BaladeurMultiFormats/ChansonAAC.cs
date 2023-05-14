@@ -9,7 +9,7 @@ namespace BaladeurMultiFormats
 {
     public class ChansonAAC : Chanson
     {
-        #region Champs
+        #region Propriétés
         public override string Format { get; }
         #endregion
 
@@ -30,8 +30,8 @@ namespace BaladeurMultiFormats
 
         public override void EcrireParoles(StreamWriter pobjFichier, string pParoles)
         {
-            OutilsFormats.EncoderAAC(pParoles);
-            pobjFichier.WriteLine(pParoles);
+            string ecrire = OutilsFormats.EncoderAAC(pParoles);
+            pobjFichier.WriteLine(ecrire);
         }
 
         public override void LireEntete()
@@ -56,7 +56,7 @@ namespace BaladeurMultiFormats
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
             OutilsFormats.DecoderAAC(infos);
-            return pobjFichier.ToString();
+            return infos;
         }
         #endregion
     }

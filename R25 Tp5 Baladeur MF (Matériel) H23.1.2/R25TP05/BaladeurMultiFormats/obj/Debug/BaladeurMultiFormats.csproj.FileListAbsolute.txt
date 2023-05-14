@@ -33,3 +33,15 @@ C:\Users\2163623\Desktop\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\B
 C:\Users\2163623\Desktop\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.exe.config
 C:\Users\2163623\Desktop\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.exe
 C:\Users\2163623\Desktop\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.pdb
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.exe.config
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.exe
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\bin\Debug\BaladeurMultiFormats.pdb
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.csproj.AssemblyReference.cache
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.csproj.SuggestedBindingRedirects.cache
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.FrmHistorique.resources
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.FrmPrincipal.resources
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.Properties.Resources.resources
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.csproj.GenerateResource.cache
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.csproj.CoreCompileInputs.cache
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.exe
+D:\isaac\téléchargements\tp5v2\R25 Tp5 Baladeur MF (Matériel) H23.1.2\R25TP05\BaladeurMultiFormats\obj\Debug\BaladeurMultiFormats.pdb

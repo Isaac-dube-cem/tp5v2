@@ -41,7 +41,7 @@ namespace BaladeurMultiFormats
         }
         public Chanson(string pRépertoire, string pArtiste, string pTitre, int pAnnée)
         {
-            m_nomFichier = pRépertoire + "\\" + Titre + '.' + Format;
+            m_nomFichier = pRépertoire;
             m_artiste = pArtiste;
             m_titre = pTitre;
             m_annee = pAnnée;
