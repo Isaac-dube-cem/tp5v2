@@ -10,7 +10,7 @@ namespace BaladeurMultiFormats
     public class ChansonMP3 : Chanson
     {
         #region Propriétés
-        public override string Format { get; }
+        public override string Format { get { return "mp3"; } }
         #endregion
 
         #region Méthodes

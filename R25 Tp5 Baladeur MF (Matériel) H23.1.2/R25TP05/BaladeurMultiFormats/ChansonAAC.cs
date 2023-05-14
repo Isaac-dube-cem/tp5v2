@@ -10,7 +10,7 @@ namespace BaladeurMultiFormats
     public class ChansonAAC : Chanson
     {
         #region Propriétés
-        public override string Format { get; }
+        public override string Format { get { return "aac"; } }
         #endregion
 
         #region Méthodes

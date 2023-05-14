@@ -14,7 +14,7 @@ namespace BaladeurMultiFormats
         #endregion
 
         #region Propriétés
-        public override string Format { get; }
+        public override string Format { get { return "wma"; } }
         #endregion
         #region Méthodes
         public ChansonWMA(string pNomFichier) : base(pNomFichier)
