@@ -71,5 +71,10 @@ namespace BaladeurMultiFormats
             //    lsvChansons.Items[index].SubItems[3].Text = objConsultation.Délai + "s";
             //}
         }
+
+        private void lsvChansons_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }

@@ -29,6 +29,8 @@ namespace BaladeurMultiFormats
             Baladeur baladeur = new Baladeur();
             baladeur.ConstruireLaListeDesChansons();
             baladeur.AfficherLesChansons(lsvChansons);
+            ListView list = new ListView();
+            lsvChansons.Items.Add(baladeur.NbChansons.ToString());
         }
         #endregion
         //---------------------------------------------------------------------------------

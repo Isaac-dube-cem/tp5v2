@@ -53,7 +53,8 @@
             // picBaladeur
             // 
             this.picBaladeur.Image = ((System.Drawing.Image)(resources.GetObject("picBaladeur.Image")));
-            this.picBaladeur.Location = new System.Drawing.Point(1, 3);
+            this.picBaladeur.Location = new System.Drawing.Point(1, 4);
+            this.picBaladeur.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picBaladeur.Name = "picBaladeur";
             this.picBaladeur.Size = new System.Drawing.Size(433, 805);
             this.picBaladeur.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -73,13 +74,16 @@
             this.lsvChansons.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lsvChansons.FullRowSelect = true;
             this.lsvChansons.GridLines = true;
-            this.lsvChansons.Location = new System.Drawing.Point(30, 55);
+            this.lsvChansons.HideSelection = false;
+            this.lsvChansons.Location = new System.Drawing.Point(40, 68);
+            this.lsvChansons.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lsvChansons.MultiSelect = false;
             this.lsvChansons.Name = "lsvChansons";
-            this.lsvChansons.Size = new System.Drawing.Size(376, 640);
+            this.lsvChansons.Size = new System.Drawing.Size(501, 788);
             this.lsvChansons.TabIndex = 5;
             this.lsvChansons.UseCompatibleStateImageBehavior = false;
             this.lsvChansons.View = System.Windows.Forms.View.Details;
+            this.lsvChansons.SelectedIndexChanged += new System.EventHandler(this.lsvChansons_SelectedIndexChanged);
             // 
             // clhArtiste
             // 
@@ -113,9 +117,10 @@
             // 
             this.lblNbChansons.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNbChansons.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbChansons.Location = new System.Drawing.Point(213, 7);
+            this.lblNbChansons.Location = new System.Drawing.Point(284, 9);
+            this.lblNbChansons.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNbChansons.Name = "lblNbChansons";
-            this.lblNbChansons.Size = new System.Drawing.Size(44, 20);
+            this.lblNbChansons.Size = new System.Drawing.Size(58, 24);
             this.lblNbChansons.TabIndex = 95;
             this.lblNbChansons.Text = "0";
             this.lblNbChansons.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -128,17 +133,19 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lblNbChansons);
-            this.panel1.Location = new System.Drawing.Point(30, 704);
+            this.panel1.Location = new System.Drawing.Point(40, 866);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(376, 60);
+            this.panel1.Size = new System.Drawing.Size(501, 74);
             this.panel1.TabIndex = 96;
             // 
             // numSecondes
             // 
             this.numSecondes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numSecondes.Location = new System.Drawing.Point(212, 33);
+            this.numSecondes.Location = new System.Drawing.Point(283, 41);
+            this.numSecondes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.numSecondes.Name = "numSecondes";
-            this.numSecondes.Size = new System.Drawing.Size(45, 20);
+            this.numSecondes.Size = new System.Drawing.Size(60, 23);
             this.numSecondes.TabIndex = 98;
             this.numSecondes.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.numSecondes.ValueChanged += new System.EventHandler(this.NumSecondes_ValueChanged);
@@ -146,9 +153,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(259, 35);
+            this.label4.Location = new System.Drawing.Point(345, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 13);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 100;
             this.label4.Text = "secondes :";
             // 
@@ -156,9 +164,10 @@
             // 
             this.lblNbChansonsDepuis.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblNbChansonsDepuis.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNbChansonsDepuis.Location = new System.Drawing.Point(328, 32);
+            this.lblNbChansonsDepuis.Location = new System.Drawing.Point(437, 39);
+            this.lblNbChansonsDepuis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNbChansonsDepuis.Name = "lblNbChansonsDepuis";
-            this.lblNbChansonsDepuis.Size = new System.Drawing.Size(36, 20);
+            this.lblNbChansonsDepuis.Size = new System.Drawing.Size(47, 24);
             this.lblNbChansonsDepuis.TabIndex = 99;
             this.lblNbChansonsDepuis.Text = "0";
             this.lblNbChansonsDepuis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,18 +175,20 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 35);
+            this.label2.Location = new System.Drawing.Point(11, 43);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 13);
+            this.label2.Size = new System.Drawing.Size(254, 16);
             this.label2.TabIndex = 97;
             this.label2.Text = "Nombre de chansons consultées depuis :";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 12);
+            this.label1.Location = new System.Drawing.Point(11, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(192, 13);
+            this.label1.Size = new System.Drawing.Size(242, 16);
             this.label1.TabIndex = 96;
             this.label1.Text = "Nombre de chansons dans l\'historique :";
             // 
@@ -188,13 +199,14 @@
             // 
             // FrmHistorique
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(439, 811);
+            this.ClientSize = new System.Drawing.Size(585, 998);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lsvChansons);
             this.Controls.Add(this.picBaladeur);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmHistorique";

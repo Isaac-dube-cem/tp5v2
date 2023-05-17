@@ -20,44 +20,25 @@ namespace BaladeurMultiFormats
         #endregion
 
         #region Méthodes
-        /// <summary>
-        /// va afficher la liste des chansons dans la listview en paramèetres
-        /// </summary>
-        /// <param name="pListView">listview dans laquel écrire les informations</param>
-        public void AfficherLesChansons(ListView pListView)
-        {   
+        public void AfficherLesChansons(ListViewItem pListView)
+        {
+            
             foreach (Chanson chanson in m_colChansons)
             {
-                ListViewItem item = new ListViewItem(chanson.Artiste);
-                item.SubItems.Add(chanson.Titre);
-                item.SubItems.Add(chanson.Format);
-                item.SubItems.Add(chanson.Annee.ToString());
-                pListView.Items.Add(item);
+                pListView = new ListViewItem();
+                pListView.SubItems.Add(chanson.Artiste);
             }
         }
-
-        /// <summary>
-        /// initialise une instance de la classe et la liste des chansons
-        /// </summary>
         public Baladeur()
         {
             m_colChansons = new List<Chanson>();
         }
 
-        /// <summary>
-        /// retourne la chanson selon l'index passé en paramètre
-        /// </summary>
-        /// <param name="pIndex"></param>
-        /// <returns></returns>
         public Chanson ChansonAt(int pIndex)
         {
             return m_colChansons[pIndex];
         }
 
-        /// <summary>
-        /// vérifie si le répertoire "Chansons" existe et parcours chaque fichier pour vérifier son format
-        ///  et instancie une nouvelle chanson selon le format et l'ajoute dans la collection m_colChansons
-        /// </summary>
         public void ConstruireLaListeDesChansons()
         {
             string[] filelist = Directory.GetFiles(NOM_RÉPERTOIRE);
@@ -86,10 +67,6 @@ namespace BaladeurMultiFormats
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="pIndex"></param>
         public void ConvertirVersAAC(int pIndex)
         {
             throw new NotImplementedException();
