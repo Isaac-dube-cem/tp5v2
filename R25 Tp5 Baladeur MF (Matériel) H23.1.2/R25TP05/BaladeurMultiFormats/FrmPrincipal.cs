@@ -15,7 +15,9 @@ namespace BaladeurMultiFormats
         #region Propriété : MonHistorique
         public Historique MonHistorique { get; }
 
-        private Baladeur Baladeur { get; }
+        public Baladeur Baladeur { get; }
+
+        
         #endregion
         //---------------------------------------------------------------------------------
         #region FrmPrincipal
@@ -25,10 +27,14 @@ namespace BaladeurMultiFormats
             Text += APP_INFO;
             MonHistorique = new Historique();
             // À COMPLÉTER...
+            Baladeur = new Baladeur();
+
             
-            Baladeur baladeur = new Baladeur();
-            baladeur.ConstruireLaListeDesChansons();
-            baladeur.AfficherLesChansons(lsvChansons);
+            
+            Baladeur.ConstruireLaListeDesChansons();
+            Baladeur.AfficherLesChansons(lsvChansons);
+
+            lblNbChansons.Text = Baladeur.NbChansons.ToString();
         }
         #endregion
         //---------------------------------------------------------------------------------
@@ -36,6 +42,8 @@ namespace BaladeurMultiFormats
         private void MettreAJourSelonContexte()
         {
             // À COMPLÉTER...
+            Baladeur.AfficherLesChansons(lsvChansons);
+            lblNbChansons.Text = Baladeur.NbChansons.ToString();
         }
         #endregion
         //---------------------------------------------------------------------------------
@@ -43,6 +51,7 @@ namespace BaladeurMultiFormats
         private void LsvChansons_SelectedIndexChanged(object sender, EventArgs e)
         {
             // À COMPLÉTER...
+            
         }
         #endregion
 
@@ -52,6 +61,15 @@ namespace BaladeurMultiFormats
         {
             // Vider l'historique car les références ne sont plus bonnes
             // À COMPLÉTER...
+            MonHistorique.Clear();
+            int selectedIndex = -1;
+            if (lsvChansons.SelectedIndices.Count > 0)
+            {
+                selectedIndex = lsvChansons.SelectedIndices[0];
+                Baladeur.ConvertirVersAAC(selectedIndex);
+                MettreAJourSelonContexte();
+            }
+            
         }
         private void MnuFormatConvertirVersMP3_Click(object sender, EventArgs e)
         {

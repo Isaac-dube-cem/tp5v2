@@ -30,8 +30,8 @@ namespace BaladeurMultiFormats
             {
                 ListViewItem item = new ListViewItem(chanson.Artiste);
                 item.SubItems.Add(chanson.Titre);
-                item.SubItems.Add(chanson.Format);
                 item.SubItems.Add(chanson.Annee.ToString());
+                item.SubItems.Add(chanson.Format.ToUpper());
                 pListView.Items.Add(item);
             }
         }
@@ -87,17 +87,22 @@ namespace BaladeurMultiFormats
         }
 
         /// <summary>
-        /// 
+        /// instancie une nouvelle chanson AAC à partir de list de chansons m_colChansons à l'index pIndex écrit les paroles dans le fichier et les encodes
+        /// puis supprime le fichier du répertoire
         /// </summary>
-        /// <param name="pIndex"></param>
+        /// <param name="pIndex">l'index de la chanson dans m_colChansons</param>
         public void ConvertirVersAAC(int pIndex)
         {
-            throw new NotImplementedException();
+            ChansonAAC chansonAAC = new ChansonAAC(NOM_RÉPERTOIRE, m_colChansons[pIndex].Artiste, m_colChansons[pIndex].Titre, m_colChansons[pIndex].Annee);
+
+            chansonAAC.Ecrire(m_colChansons[pIndex].Paroles);
+            
+            File.Delete(m_colChansons[pIndex].NomFichier);
         }
 
         public void ConvertirVersMP3(int pIndex)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException(); 
         }
 
         public void ConvertirVersWMA(int pIndex)

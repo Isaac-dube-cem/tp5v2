@@ -28,7 +28,21 @@ namespace BaladeurMultiFormats
 
         public string NomFichier { get { return m_nomFichier; } }
 
-        public string Paroles { get; }
+        public string Paroles
+        {
+            get
+            {
+                if (File.Exists(NomFichier))
+                {
+                    StreamReader fichier = new StreamReader(NomFichier);
+                    string paroles = LireParoles(fichier);
+                    fichier.Close();
+
+                    return paroles;
+                }
+                return null;
+            }
+        }
 
         public string Titre { get { return m_titre; } }
         #endregion
@@ -41,7 +55,6 @@ namespace BaladeurMultiFormats
         {
             m_nomFichier = pNomFichier;
             LireEntete();
-            
         }
         /// <summary>
         /// 
@@ -52,7 +65,7 @@ namespace BaladeurMultiFormats
         /// <param name="pAnnée">Année de la publication de la chanson</param>
         public Chanson(string pRépertoire, string pArtiste, string pTitre, int pAnnée)
         {
-            m_nomFichier = pRépertoire + "\\" + Titre + "." + Format;
+            m_nomFichier = pRépertoire + "\\" + pTitre + "." + Format;
             m_artiste = pArtiste;
             m_titre = pTitre;
             m_annee = pAnnée;
@@ -63,7 +76,7 @@ namespace BaladeurMultiFormats
             StreamWriter Fichier = new StreamWriter(NomFichier);
 
             EcrireEntete(Fichier);
-            Fichier.WriteLine(pParoles);
+            EcrireParoles(Fichier, pParoles);
             Fichier.Close();
         }
 

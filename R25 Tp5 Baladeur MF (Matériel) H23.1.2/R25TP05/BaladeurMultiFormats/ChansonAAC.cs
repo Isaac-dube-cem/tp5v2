@@ -50,8 +50,8 @@ namespace BaladeurMultiFormats
         /// <param name="pParoles">paroles de la chanson à écrire</param>
         public override void EcrireParoles(StreamWriter pobjFichier, string pParoles)
         {
-            string ecrire = OutilsFormats.EncoderAAC(pParoles);
-            pobjFichier.WriteLine(ecrire);
+            string AAC = OutilsFormats.EncoderAAC(pParoles);
+            pobjFichier.WriteLine(AAC);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace BaladeurMultiFormats
             m_artiste = artiste[1].Trim();
             m_annee = int.Parse(annee[1].Trim());
 
-            fichier.Close();
+            fichier.Close(); 
         }
 
         /// <summary>
@@ -84,7 +84,9 @@ namespace BaladeurMultiFormats
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
             OutilsFormats.DecoderAAC(infos);
+            pobjFichier.Close();
             return infos;
+            
         }
         #endregion
     }
