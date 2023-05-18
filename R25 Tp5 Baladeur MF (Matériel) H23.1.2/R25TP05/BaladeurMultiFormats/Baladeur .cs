@@ -87,7 +87,7 @@ namespace BaladeurMultiFormats
         }
 
         /// <summary>
-        /// instancie une nouvelle chanson AAC à partir de list de chansons m_colChansons à l'index pIndex écrit les paroles dans le fichier et les encodes
+        /// instancie une nouvelle chanson AAC à partir de list de chansons m_colChansons à l'index pIndex, écrit les paroles dans le fichier et les encodes
         /// puis supprime le fichier du répertoire
         /// </summary>
         /// <param name="pIndex">l'index de la chanson dans m_colChansons</param>
@@ -100,9 +100,18 @@ namespace BaladeurMultiFormats
             File.Delete(m_colChansons[pIndex].NomFichier);
         }
 
+        /// <summary>
+        /// instancie une nouvelle chanson MP3 à partir de list de chansons m_colChansons à l'index pIndex, écrit les paroles dans le fichier et les encodes
+        /// puis supprime le fichier du répertoire
+        /// </summary>
+        /// <param name="pIndex">l'index de la chanson dans m_colChansons</param>
         public void ConvertirVersMP3(int pIndex)
         {
-            throw new NotImplementedException(); 
+            ChansonMP3 chansonMP3 = new ChansonMP3(NOM_RÉPERTOIRE, m_colChansons[pIndex].Artiste, m_colChansons[pIndex].Titre, m_colChansons[pIndex].Annee);
+
+            chansonMP3.Ecrire(m_colChansons[pIndex].Paroles);
+
+            File.Delete(m_colChansons[pIndex].NomFichier);
         }
 
         public void ConvertirVersWMA(int pIndex)
