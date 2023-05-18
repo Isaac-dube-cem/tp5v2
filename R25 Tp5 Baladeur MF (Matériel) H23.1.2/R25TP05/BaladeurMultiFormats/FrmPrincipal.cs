@@ -88,6 +88,14 @@ namespace BaladeurMultiFormats
         {
             // Vider l'historique car les références ne sont plus bonnes
             // À COMPLÉTER...
+            MonHistorique.Clear();
+            int selectedIndex = -1;
+            if (lsvChansons.SelectedIndices.Count > 0)
+            {
+                selectedIndex = lsvChansons.SelectedIndices[0];
+                Baladeur.ConvertirVersWMA(selectedIndex);
+                MettreAJourSelonContexte();
+            }
         }
         #endregion
         //---------------------------------------------------------------------------------

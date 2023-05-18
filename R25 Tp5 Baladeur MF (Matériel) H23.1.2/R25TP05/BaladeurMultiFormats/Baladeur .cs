@@ -114,9 +114,18 @@ namespace BaladeurMultiFormats
             File.Delete(m_colChansons[pIndex].NomFichier);
         }
 
+        /// <summary>
+        /// instancie une nouvelle chanson WMA à partir de list de chansons m_colChansons à l'index pIndex, écrit les paroles dans le fichier et les encodes
+        /// puis supprime le fichier du répertoire
+        /// </summary>
+        /// <param name="pIndex">l'index de la chanson dans m_colChansons</param>
         public void ConvertirVersWMA(int pIndex)
         {
-            throw new NotImplementedException();
+            ChansonWMA chansonWMA = new ChansonWMA(NOM_RÉPERTOIRE, m_colChansons[pIndex].Artiste, m_colChansons[pIndex].Titre, m_colChansons[pIndex].Annee);
+
+            chansonWMA.Ecrire(m_colChansons[pIndex].Paroles);
+
+            File.Delete(m_colChansons[pIndex].NomFichier);
         }
         #endregion
     }

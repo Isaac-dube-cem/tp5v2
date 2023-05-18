@@ -10,7 +10,9 @@ namespace BaladeurMultiFormats
     public class ChansonWMA : Chanson
     {
         #region Champs
+
         private int m_codage;
+
         #endregion
 
         #region Propriétés
@@ -23,7 +25,8 @@ namespace BaladeurMultiFormats
         /// <param name="pNomFichier">Fichier de la chanson courante</param>
         public ChansonWMA(string pNomFichier) : base(pNomFichier)
         {
-
+            Random r = new Random();
+            m_codage = r.Next(3, 15);
         }
 
         /// <summary>
@@ -35,7 +38,8 @@ namespace BaladeurMultiFormats
         /// <param name="pAnnée">Année de la publication de la chanson</param>
         public ChansonWMA(string pRepertoire, string pArtiste, string pTitre, int pAnnée) : base(pRepertoire, pArtiste, pTitre, pAnnée)
         {
-
+            Random r = new Random();
+            m_codage = r.Next(3, 15);
         }
 
         /// <summary>
