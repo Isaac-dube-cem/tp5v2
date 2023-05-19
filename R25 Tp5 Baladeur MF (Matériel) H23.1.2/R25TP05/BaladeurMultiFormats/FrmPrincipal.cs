@@ -15,6 +15,8 @@ namespace BaladeurMultiFormats
         #region Propriété : MonHistorique
         public Historique MonHistorique { get; }
 
+        public Chanson ChansonCourante { get; }
+
         public Baladeur Baladeur { get; }
 
         
@@ -28,8 +30,6 @@ namespace BaladeurMultiFormats
             MonHistorique = new Historique();
             // À COMPLÉTER...
             Baladeur = new Baladeur();
-
-            
             
             Baladeur.ConstruireLaListeDesChansons();
             Baladeur.AfficherLesChansons(lsvChansons);
@@ -42,16 +42,28 @@ namespace BaladeurMultiFormats
         private void MettreAJourSelonContexte()
         {
             // À COMPLÉTER...
-            //Baladeur.AfficherLesChansons(lsvChansons);
-            //lblNbChansons.Text = Baladeur.NbChansons.ToString();
             int SelectedIndex = -1;
             if (lsvChansons.SelectedIndices.Count > 0)
             {
                 SelectedIndex = lsvChansons.SelectedIndices[0];
-                //switch (switch_on)
-                //{
-                //    default:
-                //}
+                switch (Baladeur.ChansonAt(SelectedIndex).Format)
+                {
+                    case "aac":
+                        MnuFormatConvertirVersAAC.Enabled = false;
+                        MnuFormatConvertirVersMP3.Enabled = true;
+                        MnuFormatConvertirVersWMA.Enabled = true;
+                        break;
+                    case "mp3":
+                        MnuFormatConvertirVersAAC.Enabled = true;
+                        MnuFormatConvertirVersMP3.Enabled = false;
+                        MnuFormatConvertirVersWMA.Enabled = true;
+                        break;
+                    case "wma":
+                        MnuFormatConvertirVersAAC.Enabled = true;
+                        MnuFormatConvertirVersMP3.Enabled = true;
+                        MnuFormatConvertirVersWMA.Enabled = false;
+                        break;
+                }
             }
         }
         #endregion
@@ -60,7 +72,36 @@ namespace BaladeurMultiFormats
         private void LsvChansons_SelectedIndexChanged(object sender, EventArgs e)
         {
             // À COMPLÉTER...
-            
+            int SelectedIndex = -1;
+
+            SelectedIndex = lsvChansons.SelectedItems[0].Index;
+
+            if (SelectedIndex > 0)
+            {
+                switch (Baladeur.ChansonAt(SelectedIndex).Format)
+                {
+                    case "aac":
+                        ChansonAAC chansonAAC = new ChansonAAC(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        StreamReader fichierAAC = new StreamReader(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        txtParoles.Text = chansonAAC.LireParoles(fichierAAC);
+
+                        fichierAAC.Close();
+                        break;
+                    case "mp3":
+                        ChansonMP3 chansonMP3 = new ChansonMP3(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        StreamReader fichierMP3 = new StreamReader(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        txtParoles.Text = chansonMP3.LireParoles(fichierMP3);
+                        fichierMP3.Close();
+                        break;
+                    case "wma":
+                        ChansonWMA chansonWMA = new ChansonWMA(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        StreamReader fichierWMA = new StreamReader(Baladeur.ChansonAt(SelectedIndex).NomFichier);
+                        txtParoles.Text = chansonWMA.LireParoles(fichierWMA);
+                        fichierWMA.Close();
+                        break;
+
+                }
+            }
         }
         #endregion
 
@@ -76,9 +117,9 @@ namespace BaladeurMultiFormats
             {
                 selectedIndex = lsvChansons.SelectedIndices[0];
                 Baladeur.ConvertirVersAAC(selectedIndex);
-                MettreAJourSelonContexte();
+                
             }
-            
+            MettreAJourSelonContexte();
         }
         private void MnuFormatConvertirVersMP3_Click(object sender, EventArgs e)
         {

@@ -86,8 +86,8 @@ namespace BaladeurMultiFormats
         {
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
-            OutilsFormats.DecoderWMA(infos, m_codage);
-            return infos;
+            string paroles = OutilsFormats.DecoderWMA(infos, m_codage);
+            return paroles;
         }
         #endregion
     }

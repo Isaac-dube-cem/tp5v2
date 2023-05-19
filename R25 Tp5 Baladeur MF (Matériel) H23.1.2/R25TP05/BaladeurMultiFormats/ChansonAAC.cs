@@ -83,10 +83,8 @@ namespace BaladeurMultiFormats
         {
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
-            OutilsFormats.DecoderAAC(infos);
-            pobjFichier.Close();
-            return infos;
-            
+            string paroles = OutilsFormats.DecoderAAC(infos);
+            return paroles;
         }
         #endregion
     }

@@ -79,8 +79,8 @@ namespace BaladeurMultiFormats
         {
             SauterEntete(pobjFichier);
             string infos = pobjFichier.ReadToEnd();
-            OutilsFormats.DecoderMP3(infos);
-            return infos;
+            string paroles = OutilsFormats.DecoderMP3(infos);
+            return paroles;
         }
         #endregion
     }
