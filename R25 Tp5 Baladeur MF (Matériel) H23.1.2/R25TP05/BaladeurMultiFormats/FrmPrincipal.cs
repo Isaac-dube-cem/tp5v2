@@ -42,8 +42,17 @@ namespace BaladeurMultiFormats
         private void MettreAJourSelonContexte()
         {
             // À COMPLÉTER...
-            Baladeur.AfficherLesChansons(lsvChansons);
-            lblNbChansons.Text = Baladeur.NbChansons.ToString();
+            //Baladeur.AfficherLesChansons(lsvChansons);
+            //lblNbChansons.Text = Baladeur.NbChansons.ToString();
+            int SelectedIndex = -1;
+            if (lsvChansons.SelectedIndices.Count > 0)
+            {
+                SelectedIndex = lsvChansons.SelectedIndices[0];
+                //switch (switch_on)
+                //{
+                //    default:
+                //}
+            }
         }
         #endregion
         //---------------------------------------------------------------------------------
